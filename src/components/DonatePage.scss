@@ -1,0 +1,94 @@
+.donate_container {
+  background-color: #040d2d;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donate_card_container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 60%;
+  aspect-ratio: 1;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  aspect-ratio: 1/1;
+  box-shadow: 0 0 30px 5px rgba($color: #b6d1fa, $alpha: 0.4);
+  &:hover {
+    box-shadow: 0 0 30px 5px rgba($color: #b6d1fa, $alpha: 0.3);
+    transition: all 0.5s ease-in-out;
+  }
+  animation: levitate 3s infinite ease-in-out;
+}
+
+@keyframes levitate {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.connect_button,
+.donate_button,
+.donation_list_button {
+  width: 50%;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #0099ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(31, 60, 221);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    background: linear-gradient(
+      253.19deg,
+      rgba(99, 123, 255, 0.85) 15.26%,
+      rgb(39, 72, 255) 117.65%
+    );
+  }
+}
+.donation_input {
+  width: 50%;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

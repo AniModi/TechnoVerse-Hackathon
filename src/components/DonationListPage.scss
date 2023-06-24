@@ -1,0 +1,39 @@
+.donation_list_container {
+  background-color: #040d2d;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+  height: 10%;
+}
+
+.donation_table {
+  height: 90%;
+  width: 80%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+  }
+
+  th {
+    background-color: #0099ff;
+  }
+
+  td {
+    color: #fff;
+  }
+}

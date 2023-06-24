@@ -1,0 +1,76 @@
+.card_container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  border-radius: 2%;
+  box-shadow: 0 0 20px 5px rgba($color: #b6d1fa, $alpha: 0.4);
+  &:hover {
+    box-shadow: 0 0 30px 5px rgba($color: #b6d1fa, $alpha: 0.3);
+    transition: all 0.5s ease-in-out;
+  }
+  &_bg {
+    height: 100%;
+    border-radius: 2%;
+    width: 100%;
+  }
+
+  &_content {
+    border-radius: 2%;
+    background: rgba($color: #333, $alpha: 0.7);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+    &_name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+      min-height: 1.5rem;
+    }
+    &_description {
+      padding: 0 1rem;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 1rem;
+      height: 30%;
+    }
+    &_donate {
+      padding: 0 1rem;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 1rem;
+      &_btn {
+        background: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        &:hover {
+          background: #333;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

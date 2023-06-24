@@ -1,0 +1,29 @@
+.navbar {
+    background: rgba($color: #FFFFFF, $alpha: 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    height: 60px;
+    position: fixed;
+    width: 100vw;
+    &_left{
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        * {
+            height: 100%;
+        }
+    }
+    &_right{
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        * {
+            height: 100%;
+            width: 30%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
+}
