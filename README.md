@@ -16,5 +16,6 @@ By leveraging blockchain technology and NFTs, PhilanthroNet aims to create a tru
 
 # Deployment
 You can access the deployed PhilanthroNet application at the following link:
+Please install METAMASK before using the app.
 
 [PhilanthroNet on Netlify](https://subtle-haupia-717002.netlify.app/)
