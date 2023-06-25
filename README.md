@@ -15,7 +15,7 @@ PhilanthroNet is built on the Ethereum blockchain, which ensures the transparenc
 By leveraging blockchain technology and NFTs, PhilanthroNet aims to create a truly decentralized charity platform that empowers users to make a difference in the world
 
 # Deployment
-You can access the deployed PhilanthroNet application at the following link:
 Please install METAMASK before using the app.
+You can access the deployed PhilanthroNet application at the following link:
 
 [PhilanthroNet on Netlify](https://subtle-haupia-717002.netlify.app/)
