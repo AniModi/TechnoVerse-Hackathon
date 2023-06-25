@@ -59,6 +59,11 @@
         "components": [
           {
             "internalType": "uint256",
+            "name": "_trustId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
             "name": "amount",
             "type": "uint256"
           },

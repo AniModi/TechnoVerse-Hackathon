@@ -30,14 +30,14 @@ const DonationListPage = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await fetch("https://api.example.com/donations");
-        const data = await response.json();
-        setDonations(data);
-      } catch (error) {
-        console.error("Error fetching donations:", error);
-      }
-      loadBlockchainData();
+      // try {
+      //   const response = await fetch("https://api.example.com/donations");
+      //   const data = await response.json();
+      //   setDonations(data);
+      // } catch (error) {
+      //   console.error("Error fetching donations:", error);
+      // }
+      await loadBlockchainData();
     };
 
     fetchData();
@@ -53,6 +53,7 @@ const DonationListPage = (props) => {
     const donationC = new ethers.Contract(donationAddress, donationABI, signer);
 
     const _donations = await donationC.getTrustDonations()
+    console.log('donations',_donations)
     setDonations(_donations);
   }
 
@@ -68,13 +69,15 @@ const DonationListPage = (props) => {
           </tr>
         </thead>
         <tbody>
-          {donations.map((donation) => (
+        {donations.map((donation) => {
+          if(donation._trustId == id-1){
+          return(
             <tr key={donation.id}>
               <td>{donation.donor}</td>
               <td>{ethers.formatEther(donation.amount.toString())} ETH</td>
               <td>{convertTime(donation.time.toString())}</td>
-            </tr>
-          ))}
+            </tr>);}
+            })}
         </tbody>
       </table>
     </div>

@@ -13,6 +13,7 @@ contract Donation{
     trustDonationData[] trustDonations;
 
     struct trustDonationData{
+        uint256 _trustId;
         uint256 amount;
         address donor;
         uint256 time;
@@ -47,7 +48,7 @@ contract Donation{
         if(hasDonated[msg.sender] == false)
         donors.push(msg.sender);
         hasDonated[msg.sender] = true;
-        trustDonations.push(trustDonationData(msg.value, msg.sender, block.timestamp));
+        trustDonations.push(trustDonationData(_trustId, msg.value, msg.sender, block.timestamp));
     }
 
 }

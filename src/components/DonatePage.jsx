@@ -42,6 +42,7 @@ const DonatePage = (props) => {
   const [provider, setProvider] = useState(null);
   const [account, setAccount] = useState(null);
   const [connectButton, setConnectButton] = useState('Connect to MetaMask');
+  const [donateButton, setDonateButton] = useState('Make Donation');
   const [charity, setCharity] = useState(null);
   const [donationContract, setDonationContract] = useState(null);
   const [isConnected, setIsConnected] = useState(false);
@@ -89,8 +90,8 @@ const DonatePage = (props) => {
       const donationAmount = ethers.parseEther(donation);
       // console.log(typeof donation);
       const uri = donation+" ETH"
-      await donationContract.donate(uri, id, {value: donationAmount});
-
+      await donationContract.donate(uri, id-1, {value: donationAmount});
+      setDonateButton('Donated !');
     }
 
   };
@@ -116,7 +117,7 @@ const DonatePage = (props) => {
           // value={donation}
           onChange={handleDonationChange}
         />
-        <button className="donate_button" onClick={handleDonation}>Make Donation</button>
+        <button className="donate_button" onClick={handleDonation}>{donateButton}</button>
         <button className="donation_list_button" onClick={handleNavigate}>
           See Donation Records
         </button>
