@@ -28,6 +28,7 @@ const convertTime = (timestamp)=>{
 const DonationListPage = (props) => {
   const {id} = useParams();
   const [donations, setDonations] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,13 +55,15 @@ const DonationListPage = (props) => {
     const donationC = new ethers.Contract(donationAddress, donationABI, signer);
 
     const _donations = await donationC.getTrustDonations()
-    console.log('donations',_donations)
+    // console.log('donations',_donations)
     setDonations(_donations);
+    setIsLoaded(true)
   }
 
   return (
     <div className="donation_list_container">
       <h1 className="title">Tamper-proof&nbsp;donation records</h1>
+      { isLoaded &&
       <table className="donation_table">
         <thead>
           <tr>
@@ -80,7 +83,8 @@ const DonationListPage = (props) => {
             </tr>);}
             })}
         </tbody>
-      </table>
+      </table>}
+      {!isLoaded && <h1 className="title">Loading...</h1>}
     </div>
   );
 };

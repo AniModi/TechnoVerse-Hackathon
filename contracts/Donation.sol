@@ -40,7 +40,7 @@ contract Donation{
         (bool success, ) = trustOwner.call{value: donationAmount}("");
         require(success, "Transfer failed.");
         
-        if(hasDonated[msg.sender] == false || msg.value>=10 ether){
+        if(hasDonated[msg.sender] == false || msg.value>=0.1 ether){
                 uint256 tokenId = Charity(nftAddress).mint(_tokenURI);
         Charity(nftAddress).transferNftFrom(address(this), msg.sender, tokenId);
         }

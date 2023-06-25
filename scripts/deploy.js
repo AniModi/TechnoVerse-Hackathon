@@ -4,8 +4,6 @@ async function main() {
   const Charity = await ethers.getContractFactory("Charity");
   const charity = await Charity.deploy();
   console.log("Charity deployed to:", charity.target);
-  const totalSupply = await charity.totalSupply();
-  console.log("Total supply:", totalSupply.toString());
 
   const Donation = await ethers.getContractFactory("Donation");
   const donation = await Donation.deploy(charity.target, trustOwner.address, 3);

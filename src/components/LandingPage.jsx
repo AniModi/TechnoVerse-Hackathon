@@ -55,7 +55,12 @@ const LandingPage = () => {
           <h1 className="landing_page_container_one_title">PhilanthroNet</h1>
           <h2 className="landing_page_container_one_subheading">Truly Decentralized Charity Platform</h2>
           <p className="landing_page_container_one_description">
-            Now, you can donate to your desired charitable organisation with Ether (ETH). For every donation you make, you get a NFT as a token of appreciation. All donations are stored in a donation record, ensuring accountability. The NFTs are unique and are minted on the Ethereum blockchain, ensuring transparency of donations. NFTs can be used to avail membership status, access to our events and community of donators.
+            <br/>
+            -{'>'} Now, you can donate to your desired charitable organisation with Ether (ETH).<br/> 
+            -{'>'} For every donation you make {'(worth 0.1 ETH or more)'}, you get an NFT.<br/>
+            -{'>'} All donations are stored in a donation record, ensuring accountability. <br/>
+            -{'>'} The NFTs are unique and are minted on the Ethereum blockchain, ensuring transparency of donations.<br/>
+            -{'>'} NFTs can be used to avail membership status, access to our events and community of donators.<br/>
           </p>
           <FaArrowDown className="arrow-bounce" />
         </div>
