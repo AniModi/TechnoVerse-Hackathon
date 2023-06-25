@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+# PhilanthroNet: Truly Decentralized Charity Platform
+PhilanthroNet is a decentralized charity platform that leverages blockchain technology to create a transparent and accountable donation system. With PhilanthroNet, you can donate Ether (ETH) to your desired charitable organization, receive unique NFTs for your donations, and be part of a community that values transparency and accountability.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Features
+- Donate to charitable organizations with Ether (ETH)
+- Receive an NFT for every donation worth 0.1 ETH or more
+- All donations are stored in a donation record, ensuring accountability
+- NFTs are minted on the Ethereum blockchain, ensuring transparency of donations
+- Use NFTs to avail membership status, access to events, and join the community of donators
+# About the Project
+PhilanthroNet is a decentralized charity platform that aims to revolutionize the way people donate to charitable organizations. It combines the power of blockchain technology with the appeal of NFTs to create a truly transparent and accountable donation system. This platform allows users to donate Ether (ETH) to their desired charitable organization and receive unique NFTs as a reward for their generosity. These NFTs can then be used to avail membership status, access exclusive events, and join the community of like-minded donators.
 
-## Available Scripts
+PhilanthroNet is built on the Ethereum blockchain, which ensures the transparency and security of the donation process. All donations are stored in a donation record, making it easy for users to track their contributions and monitor the impact of their donations. The NFTs generated for each donation are also minted on the Ethereum blockchain, guaranteeing their uniqueness and authenticity.
 
-In the project directory, you can run:
+By leveraging blockchain technology and NFTs, PhilanthroNet aims to create a truly decentralized charity platform that empowers users to make a difference in the world
 
-### `npm start`
+# Deployment
+You can access the deployed PhilanthroNet application at the following link:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[PhilanthroNet on Netlify](https://subtle-haupia-717002.netlify.app/)
