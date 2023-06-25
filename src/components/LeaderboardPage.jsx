@@ -4,7 +4,6 @@ import charityABI from './../abis/charity.json'
 import donationABI from './../abis/donation.json'
 import config from './config.json'
 import "./LeaderboardPage.scss";
-import { useLocation } from "react-router-dom";
 
 const LeaderboardPage = () => {
   // Sample leaderboard data
@@ -27,7 +26,6 @@ const LeaderboardPage = () => {
     const donationC = new ethers.Contract(donationAddress, donationABI, signer);
 
     let leaderboard = await donationC.getDonors()
-    // console.log('donors', leaderboard[0])
     let leaderboardData = []
     for (let i = 0; i < leaderboard.length; i++) {
       const _account = (leaderboard[i])

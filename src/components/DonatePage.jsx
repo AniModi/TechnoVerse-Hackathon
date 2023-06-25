@@ -6,7 +6,7 @@ import config from './config.json'
 import "./DonatePage.scss";
 import { useNavigate, useParams } from "react-router-dom";
 
-const DonatePage = (props) => {
+const DonatePage = () => {
   const [background, setBackground] = useState({
     background: "white",
   });
@@ -19,12 +19,10 @@ const DonatePage = (props) => {
         navigate("/donation-list/"+id);
     }
 
-    // console.log(donation);
   useEffect(() => {
     const call = async () => {
       const response = await fetch(`https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/QmWF2vsEyJ7MJsemiPzupvcsidn6VANL6EYkrsSPSjZ7zK/${id}.json`);
       const data = await response.json();
-      // console.log(data.image);
       const url = "https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/"+data.image.slice(7);
       const newBackground = {
         ...background,
@@ -37,7 +35,7 @@ const DonatePage = (props) => {
       await loadBlockchainData();
     };
     call();
-  }, []);
+  }, [background, id]);
 
   const [provider, setProvider] = useState(null);
   const [account, setAccount] = useState(null);
@@ -56,7 +54,6 @@ const DonatePage = (props) => {
     const charityAddress =config["charity"];
     const donationAddress =config["donation"];
     const signer = await provider.getSigner();
-    // console.log(signer);
     const charity = new ethers.Contract(charityAddress, charityABI, signer);
     const donationC = new ethers.Contract(donationAddress, donationABI, signer);
 
@@ -75,7 +72,6 @@ const DonatePage = (props) => {
   const handleConnect = async () => {
     setConnectButton('Connecting...');
     await window.ethereum.request({ method: "eth_requestAccounts" });
-    // console.log(typeof account);
     setConnectButton(account.slice(0,5)+'...'+account.slice(-4));
     setIsConnected(true);
     return;
@@ -88,7 +84,6 @@ const DonatePage = (props) => {
     }
     if(provider && charity && donationContract){
       const donationAmount = ethers.parseEther(donation);
-      // console.log(typeof donation);
       const uri = donation+" ETH"
       await donationContract.donate(uri, id-1, {value: donationAmount});
       setDonateButton('Donated !');
