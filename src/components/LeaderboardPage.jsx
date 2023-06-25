@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./LeaderboardPage.scss";
+import { useLocation } from "react-router-dom";
 
 const LeaderboardPage = () => {
   // Sample leaderboard data

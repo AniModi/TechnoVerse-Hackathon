@@ -1,5 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    font-family: 'Space Mono', monospace;
 }
+
+/* Width and Height of the scrollbar track */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Background of the scrollbar track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Color and opacity of the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  
+  /* Color and opacity of the scrollbar thumb on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  

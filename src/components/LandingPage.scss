@@ -3,6 +3,7 @@
   width: 100vw;
   height: 100%;
   flex-direction: column;
+
   &_one {
     width: 100vw;
     height: 100vh;
@@ -11,22 +12,45 @@
     &_left {
       width: 70%;
       height: 70%;
-      background: rgba($color: #ffff, $alpha: 0.3);
       position: absolute;
       top: 15%;
       left: 15%;
       border-radius: 1%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .landing_page_container_one_title {
+        font-size: 3rem;
+        color: white;
+        margin-bottom: 10px;
+        margin-top: 50px;
+      }
+
+      .landing_page_container_one_subheading {
+        font-size: 1.5rem;
+        color: white;
+        margin-bottom: 10px;
+      }
+
+      .landing_page_container_one_description {
+        font-size: 1.25rem;
+        color: white;
+        text-align: center;
+        margin: 0 20px;
+      }
     }
   }
   &_two {
     width: 100vw;
     height: 100vh;
     background-color: #040d2d;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     &_header {
       width: 100%;
       height: 20%;
@@ -36,6 +60,7 @@
       font-size: 3rem;
       justify-content: center;
     }
+
     &_cards {
       display: flex;
       width: 100%;
@@ -44,21 +69,25 @@
       align-items: center;
       justify-content: center;
       gap: 2%;
+
       &::-webkit-scrollbar {
         display: none;
       }
+
       &_card {
         transition: all 0.5s ease-in-out;
         min-width: 200px;
         width: 25%;
         aspect-ratio: 1/1;
         box-shadow: 0 0 30px 5px rgba($color: #b6d1fa, $alpha: 0.4);
+
         &:hover {
           box-shadow: 0 0 30px 5px rgba($color: #b6d1fa, $alpha: 0.3);
           transition: all 0.5s ease-in-out;
         }
       }
     }
+
     &_btn {
       width: 100%;
       height: 20%;
@@ -67,7 +96,8 @@
       justify-content: center;
       gap: 30px;
       flex-wrap: wrap;
-      &_btn {
+
+      .landing_page_container_two_btn_btn {
         min-width: 200px;
         width: 20%;
         height: 50%;
@@ -77,6 +107,7 @@
         color: white;
         font-size: 1.5rem;
         cursor: pointer;
+
         &:hover {
           transition: all 0.5s ease-in-out;
           background: linear-gradient(
@@ -90,19 +121,26 @@
   }
 }
 
-
-p {
-  font-size: 1.5rem;
+.arrow-bounce {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  animation: bounce 1.5s infinite;
   color: white;
-  text-align: center;
-  margin: 5px 5px 5px 5px;
+  margin-bottom: 20px;
+  margin-top: auto;
 }
 
-h1{
-  font-size: 2.5rem;
-  // color: white;
-  // text-align: center;
-  margin: 5px 5px 5px 5px;
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @media screen and (max-width: 630px) {
