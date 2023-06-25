@@ -1,76 +1,32 @@
 import React, { useEffect, useState } from "react";
+import {ethers} from "ethers";
+import charityABI from './../abis/charity.json'
+import donationABI from './../abis/donation.json'
+import config from './config.json'
 import "./DonationListPage.scss";
 
-const DonationListPage = () => {
-  const [donations, setDonations] = useState([
-    {
-      "id": 1,
-      "account": "John Doe",
-      "amount": 100,
-      "date": "2023-06-20"
-    },
-    {
-      "id": 2,
-      "account": "Jane Smith",
-      "amount": 50,
-      "date": "2023-06-22"
-    },
-    {
-      "id": 3,
-      "account": "Michael Johnson",
-      "amount": 200,
-      "date": "2023-06-23"
-    },
-    {
-      "id": 4,
-      "account": "Emily Davis",
-      "amount": 75,
-      "date": "2023-06-25"
-    },
-    {
-      "id": 5,
-      "account": "David Wilson",
-      "amount": 150,
-      "date": "2023-06-27"
-    },
-    {
-      "id": 6,
-      "account": "Sarah Thompson",
-      "amount": 120,
-      "date": "2023-06-30"
-    },
-    {
-      "id": 7,
-      "account": "Robert Anderson",
-      "amount": 80,
-      "date": "2023-07-02"
-    },
-    {
-      "id": 8,
-      "account": "Olivia Martinez",
-      "amount": 90,
-      "date": "2023-07-05"
-    },
-    {
-      "id": 8,
-      "account": "Olivia Martinez",
-      "amount": 90,
-      "date": "2023-07-05"
-    },
-    {
-      "id": 8,
-      "account": "Olivia Martinez",
-      "amount": 90,
-      "date": "2023-07-05"
-    },
-    {
-      "id": 8,
-      "account": "Olivia Martinez",
-      "amount": 90,
-      "date": "2023-07-05"
-    },
-  ]
-  );
+const convertTime = (timestamp)=>{
+  const milliseconds = timestamp * 1000;
+
+  // Create a new Date object with the converted milliseconds
+  const date = new Date(milliseconds);
+  
+  // Get the various components of the date
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1; // Months are zero-based, so add 1
+  const day = date.getDate();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  
+  // Construct the formatted date string
+  const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  return formattedDate;
+}
+
+const DonationListPage = (props) => {
+  const id = props.id;
+  const [donations, setDonations] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -81,10 +37,24 @@ const DonationListPage = () => {
       } catch (error) {
         console.error("Error fetching donations:", error);
       }
+      loadBlockchainData();
     };
 
     fetchData();
   }, []);
+
+  const loadBlockchainData = async () => {
+    const provider = new ethers.BrowserProvider(window.ethereum);
+    const charityAddress =config["charity"];
+    const donationAddress =config["donation"];
+    const signer = await provider.getSigner();
+    // console.log(signer);
+    const charity = new ethers.Contract(charityAddress, charityABI, signer);
+    const donationC = new ethers.Contract(donationAddress, donationABI, signer);
+
+    const _donations = await donationC.getTrustDonations()
+    setDonations(_donations);
+  }
 
   return (
     <div className="donation_list_container">
@@ -94,15 +64,15 @@ const DonationListPage = () => {
           <tr>
             <th>Account</th>
             <th>Amount</th>
-            <th>Date</th>
+            <th>Date & Time</th>
           </tr>
         </thead>
         <tbody>
           {donations.map((donation) => (
             <tr key={donation.id}>
-              <td>{donation.account}</td>
-              <td>${donation.amount}</td>
-              <td>{donation.date}</td>
+              <td>{donation.donor}</td>
+              <td>{ethers.formatEther(donation.amount.toString())} ETH</td>
+              <td>{convertTime(donation.time.toString())}</td>
             </tr>
           ))}
         </tbody>

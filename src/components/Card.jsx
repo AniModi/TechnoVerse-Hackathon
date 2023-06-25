@@ -9,7 +9,7 @@ const Card = (props) => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate("/donate");
+    navigate("/donate/"+props.id);
   };
 
   if (props.url) {
