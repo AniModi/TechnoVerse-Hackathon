@@ -4,13 +4,13 @@ import charityABI from './../abis/charity.json'
 import donationABI from './../abis/donation.json'
 import config from './config.json'
 import "./DonatePage.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const DonatePage = (props) => {
   const [background, setBackground] = useState({
     background: "white",
   });
-  const id=props.id;
+  const {id} = useParams();
 
   const [donation, setDonation] = useState('0');
 

@@ -10,7 +10,7 @@ const LandingPage = () => {
         navigate("/organizations");
     }
     else {
-        navigate("/about");
+        navigate("/leaderboard");
     }
   }
 
@@ -79,7 +79,7 @@ const LandingPage = () => {
             </div>
         <div className="landing_page_container_two_btn">
             <button className="landing_page_container_two_btn_btn" onClick={handleNavigate}>More Organizations</button>
-            <button className="landing_page_container_two_btn_btn" onClick={handleNavigate}>Know more</button>
+            <button className="landing_page_container_two_btn_btn" onClick={handleNavigate}>Go to leaderboard</button>
         </div>
       </div>
     </div>

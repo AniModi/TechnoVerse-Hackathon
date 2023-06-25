@@ -1,0 +1,34 @@
+.leaderboard_container {
+    background-color: #040d2d;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .leaderboard_table {
+    width: 60%;
+    margin-top: 50px;
+    border-collapse: collapse;
+  
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+    }
+  
+    th {
+      background-color: #0099ff;
+    }
+  }
+  

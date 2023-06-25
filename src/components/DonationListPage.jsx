@@ -4,6 +4,7 @@ import charityABI from './../abis/charity.json'
 import donationABI from './../abis/donation.json'
 import config from './config.json'
 import "./DonationListPage.scss";
+import { useParams } from "react-router-dom";
 
 const convertTime = (timestamp)=>{
   const milliseconds = timestamp * 1000;
@@ -25,7 +26,7 @@ const convertTime = (timestamp)=>{
 }
 
 const DonationListPage = (props) => {
-  const id = props.id;
+  const {id} = useParams();
   const [donations, setDonations] = useState([]);
 
   useEffect(() => {
