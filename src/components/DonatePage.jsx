@@ -101,7 +101,14 @@ const DonatePage = (props) => {
         <div className="card" style={background}></div>
       </div>
       <div className="content">
-        <button className="connect_button" onClick={handleConnect}>{connectButton}</button>
+        {
+          isConnected && <button className="connect_button"><a href={`${config["blockExplorer"]}/address/${account}`}>
+            {connectButton}{' -->'}</a></button>
+        }
+        {
+          !isConnected && 
+          <button className="connect_button" onClick={handleConnect}>{connectButton}</button>
+        }
         <input
           className="donation_input"
           type="text"

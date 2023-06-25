@@ -14,33 +14,27 @@ const LandingPage = () => {
     }
   }
 
-  const [images, setImages]= useState([]);
-  const [names, setNames]= useState([]);
-  const [descriptions, setDescriptions]= useState([]);
+  const [images, setImages]= useState(['']);
+  const [names, setNames]= useState(['']);
+  const [descriptions, setDescriptions]= useState(['']);
 
   const loadOrganisations = async ()=>{
-    setImages([])
-       
-       let response = await fetch(`https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/QmWF2vsEyJ7MJsemiPzupvcsidn6VANL6EYkrsSPSjZ7zK/1.json`);
-            let data = await response.json();
-            setImages((prevImages)=>['https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/'+data.image.slice(7)]);
-            setNames((prevNames)=>[data.name]);
-            setDescriptions((prevDescriptions)=>[data.about]);
-
-            response = await fetch(`https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/QmWF2vsEyJ7MJsemiPzupvcsidn6VANL6EYkrsSPSjZ7zK/2.json`);
-            data = await response.json();
-            setImages((prevImages)=>[...prevImages, 'https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/'+data.image.slice(7)]);
-            setNames((prevNames)=>[...prevNames, data.name]);
-            setDescriptions((prevDescriptions)=>[...prevDescriptions, data.about]);
+    setImages([]);
+    const response1 = await fetch(`https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/QmWF2vsEyJ7MJsemiPzupvcsidn6VANL6EYkrsSPSjZ7zK/1.json`);
+        const data1 = await response1.json();
+        const response2 = await fetch(`https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/QmWF2vsEyJ7MJsemiPzupvcsidn6VANL6EYkrsSPSjZ7zK/2.json`);
+        const data2 = await response2.json();
+        const response3 = await fetch(`https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/QmWF2vsEyJ7MJsemiPzupvcsidn6VANL6EYkrsSPSjZ7zK/3.json`);
+        const data3 = await response3.json();
+        setImages([
+          'https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/' + data1.image.slice(7),
+          'https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/' + data2.image.slice(7),
+          'https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/' + data3.image.slice(7)
+        ]);
+        setNames([data1.name, data2.name, data3.name]);
+        setDescriptions([data1.about, data2.about, data3.about]);
             
-            response = await fetch(`https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/QmWF2vsEyJ7MJsemiPzupvcsidn6VANL6EYkrsSPSjZ7zK/3.json`);
-            data = await response.json();
-            console.log('data', data)
-            setImages((prevImages)=>[...prevImages, 'https://beige-asleep-chinchilla-881.mypinata.cloud/ipfs/'+data.image.slice(7)]);
-            setNames((prevNames)=>[...prevNames, data.name]);
-            setDescriptions((prevDescriptions)=>[...prevDescriptions, data.about]);
-            
-          // console.log('Images', images)
+          // console.log('Images', images[3])
   }
 
   useEffect(()=>{
@@ -49,9 +43,20 @@ const LandingPage = () => {
 
   return (
     <div className="landing_page_container">
-      <h1>DonateX</h1>
+      <h1>PhilanthroNet</h1>
       <div className="landing_page_container_one"></div>
-      <div className="landing_page_container_one_left"></div>
+      <div className="landing_page_container_one_left">
+        <br/><br/>
+        <p className="title">Truly Decentralized Charity Platform</p>
+        <p>
+           Now, you can donate to your desired charitable organisation with Ether (ETH)<br/><br/>
+           For every donation you make, you get a NFT as a token of appreciation<br/><br/>
+           The NFTs are unique and are minted on the Ethereum blockchain, promoting transparency of donations<br/><br/>
+           NFTs can be used to avail membership status, access to our events and community of donators
+           <br/><br/><br/>
+           --- Scroll down ---
+        </p>
+        </div>
       <div className="landing_page_container_two">
         <div className="landing_page_container_two_header">
             Donate for a cause

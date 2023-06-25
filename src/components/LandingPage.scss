@@ -90,6 +90,21 @@
   }
 }
 
+
+p {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  margin: 5px 5px 5px 5px;
+}
+
+h1{
+  font-size: 2.5rem;
+  // color: white;
+  // text-align: center;
+  margin: 5px 5px 5px 5px;
+}
+
 @media screen and (max-width: 630px) {
   .landing_page_container_two_cards {
     justify-content: flex-start;
