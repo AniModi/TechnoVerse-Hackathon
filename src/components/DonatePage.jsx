@@ -118,7 +118,7 @@ const DonatePage = (props) => {
         />
         <button className="donate_button" onClick={handleDonation}>Make Donation</button>
         <button className="donation_list_button" onClick={handleNavigate}>
-          View Donation List
+          See Donation Records
         </button>
       </div>
     </div>

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const LandingPage = () => {
   const navigate = useNavigate();
   const handleNavigate = (e) => {
-    if(e.target.innerText === "Find Organizations") {
+    if(e.target.innerText === "More Organizations") {
         navigate("/organizations");
     }
     else {
@@ -49,15 +49,20 @@ const LandingPage = () => {
         <br/><br/>
         <p className="title">Truly Decentralized Charity Platform</p>
         <p>
-           Now, you can donate to your desired charitable organisation with Ether (ETH)<br/><br/>
-           For every donation you make, you get a NFT as a token of appreciation<br/><br/>
-           The NFTs are unique and are minted on the Ethereum blockchain, promoting transparency of donations<br/><br/>
-           NFTs can be used to avail membership status, access to our events and community of donators
+           Now, you can donate to your desired charitable organisation with Ether (ETH).<br/><br/>
+           For every donation you make, you get a NFT as a token of appreciation.<br/><br/>
+           All donations are stored in a donation record, ensuring accountability.<br/><br/>
+           The NFTs are unique and are minted on the Ethereum blockchain, ensuring transparency of donations.<br/><br/>
+           NFTs can be used to avail membership status, access to our events and community of donators.
            <br/><br/><br/>
            --- Scroll down ---
         </p>
         </div>
+        {/* <h1>Future goals:<br/> To implement zero knowledge proofs to verify donors<br/>
+        To use DAO to validate charity funds allocation</h1> */}
+
       <div className="landing_page_container_two">
+        
         <div className="landing_page_container_two_header">
             Donate for a cause
         </div>
@@ -73,7 +78,7 @@ const LandingPage = () => {
                     </div>
             </div>
         <div className="landing_page_container_two_btn">
-            <button className="landing_page_container_two_btn_btn" onClick={handleNavigate}>Find Organizations</button>
+            <button className="landing_page_container_two_btn_btn" onClick={handleNavigate}>More Organizations</button>
             <button className="landing_page_container_two_btn_btn" onClick={handleNavigate}>Know more</button>
         </div>
       </div>

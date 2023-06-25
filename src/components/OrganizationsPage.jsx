@@ -32,7 +32,7 @@ const OrganizationsPage = () => {
   return (
     <div className="organizations_page_container">
       <div className="organizations_page_container_title">
-        Organizations
+        Charitable Organizations
       </div>
         <div className="organizations_page_container_cards">
             <div className="organizations_page_container_cards_card">

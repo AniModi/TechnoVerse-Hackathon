@@ -58,7 +58,7 @@ const DonationListPage = (props) => {
 
   return (
     <div className="donation_list_container">
-      <h1 className="title">Donation List</h1>
+      <h1 className="title">Tamper-proof&nbsp;donation records</h1>
       <table className="donation_table">
         <thead>
           <tr>
